@@ -1,0 +1,18 @@
+spring:
+  datasource:
+    hikari:
+      username: ${DATASOURCE_USER}
+      password: ${DATASOURCE_PASS}
+      maximum-pool-size: 20
+    url: ${DATASOURCE_URL}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    open-in-view: false
+    defer-datasource-initialization: true
+    show-sql: false
+  sql:
+    init:
+      mode: always
+server:
+  port: 8082
