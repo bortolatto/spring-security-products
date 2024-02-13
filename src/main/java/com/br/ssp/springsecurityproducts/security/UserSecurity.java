@@ -1,6 +1,5 @@
 package com.br.ssp.springsecurityproducts.security;
 
-import com.br.ssp.springsecurityproducts.controller.AuthorityDTO;
 import com.br.ssp.springsecurityproducts.controller.UserDTO;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
