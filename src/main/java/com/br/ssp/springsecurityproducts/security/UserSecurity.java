@@ -18,7 +18,7 @@ public class UserSecurity implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return user.getAuthorities().stream().map(AuthorityDTO::getName)
+        return user.getAuthorities().stream().map(a -> "ROLE_" + a.getName())
                 .map(SimpleGrantedAuthority::new)
                 .toList();
     }

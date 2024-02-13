@@ -1,7 +1,5 @@
 package com.br.ssp.springsecurityproducts.controller;
 
-import com.br.ssp.springsecurityproducts.controller.AuthorityDTO;
-import com.br.ssp.springsecurityproducts.controller.UserDTO;
 import org.hibernate.query.TupleTransformer;
 
 import java.util.HashMap;

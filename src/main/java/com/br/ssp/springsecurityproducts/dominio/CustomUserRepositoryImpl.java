@@ -14,6 +14,7 @@ public class CustomUserRepositoryImpl implements CustomUserRepository {
         this.entityManager = entityManager;
     }
 
+    @SuppressWarnings("unchecked")
     @Override
     public UserDTO findUserDTOWithAuthorities(String username) {
         return (UserDTO) entityManager.createNativeQuery("""
