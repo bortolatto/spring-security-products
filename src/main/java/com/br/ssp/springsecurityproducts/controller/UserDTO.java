@@ -5,6 +5,11 @@ import java.util.List;
 
 public class UserDTO {
 
+    public static final String USERNAME_ALIAS = "USERNAME";
+    public static final String ALGORITHM_ALIAS = "ALGORITHM";
+    public static final String PASSWORD_ALIAS = "PASSWORD";
+    public static final String AUTH_NAME_ALIAS = "AUTH_NAME";
+
     private final String name;
     private final String password;
     private final String algoritm;

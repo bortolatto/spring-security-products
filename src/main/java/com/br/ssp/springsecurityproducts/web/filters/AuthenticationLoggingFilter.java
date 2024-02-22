@@ -13,7 +13,7 @@ public class AuthenticationLoggingFilter implements Filter {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-        LOGGER.info("Succesfully authenticated request with id {}", ((HttpServletRequest) request).getHeader("Request-Id"));
+        LOGGER.info("Succesfully authenticated request with id {}", ((HttpServletRequest) request).getHeader("X-IDENTIFIER"));
 
         chain.doFilter(request, response);
     }

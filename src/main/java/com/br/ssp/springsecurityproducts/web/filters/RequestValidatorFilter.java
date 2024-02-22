@@ -12,7 +12,7 @@ public class RequestValidatorFilter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest) request;
         HttpServletResponse httpServletResponse = (HttpServletResponse) response;
 
-        String requestId = httpServletRequest.getHeader("Request-Id");
+        String requestId = httpServletRequest.getHeader("X-IDENTIFIER");
         if (requestId == null || requestId.isBlank()) {
             httpServletResponse.setStatus(HttpServletResponse.SC_BAD_REQUEST);
             return;
