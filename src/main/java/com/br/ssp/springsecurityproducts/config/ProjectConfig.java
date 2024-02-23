@@ -15,6 +15,9 @@ import org.springframework.security.web.authentication.www.BasicAuthenticationFi
 import org.springframework.security.web.csrf.CsrfFilter;
 import org.springframework.security.web.csrf.CsrfTokenRequestAttributeHandler;
 import org.springframework.security.web.util.matcher.RegexRequestMatcher;
+import org.springframework.web.cors.CorsConfiguration;
+
+import java.util.List;
 
 @Configuration
 public class ProjectConfig {
@@ -58,6 +61,14 @@ public class ProjectConfig {
         http.addFilterBefore(new RequestValidatorFilter(), CsrfFilter.class)
                 .addFilterAfter(new AuthenticationLoggingFilter(), BasicAuthenticationFilter.class)
                 .addFilterAfter(new CsrfTokenLoggerFilter(tokenRepository), CsrfFilter.class);
+
+        /* cors */
+        http.cors(ctz -> ctz.configurationSource(r -> {
+            CorsConfiguration configuration = new CorsConfiguration();
+            configuration.setAllowedMethods(List.of("GET", "POST"));
+
+            return configuration;
+        }));
 
         /*http
                 // quando adicionar um filtro na posição específica,
